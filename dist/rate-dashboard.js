@@ -372,7 +372,7 @@
         stars: 0,
         description: '',
         personId: '',
-        createDate: Date.now()
+        createDate: null
       };
       vm.reviews.push(vm.inserted);
     }
@@ -381,6 +381,7 @@
       if(id){
         reviewService.updateReview(id, data);
       } else {
+        data.createDate = Date.now();
         reviewService.addReview(data).then(function(response) {
           vm.inserted._id = response._id;
         });
