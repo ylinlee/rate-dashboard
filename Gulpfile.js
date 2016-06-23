@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     path = require('path'),
+    htmlmin = require('gulp-htmlmin'),
     templateCache = require('gulp-angular-templatecache'),
     plumber = require('gulp-plumber'),
     jshint = require('gulp-jshint');
@@ -42,6 +43,7 @@ gulp.task('templates', function() {
     var TEMPLATE_HEADER = '(function() {\'use strict\';angular.module(\'<%= module %>\'<%= standalone %>).run([\'$templateCache\', function($templateCache) {';
     var TEMPLATE_FOOTER = '}]);})();';
     gulp.src(sourceDirectory + '/' + moduleName + '/template/**/*.template.html')
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(templateCache({
             root: 'src/' + moduleName + '/template/',
             module: 'rateApp.' + moduleName,
