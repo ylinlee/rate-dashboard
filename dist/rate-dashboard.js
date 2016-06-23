@@ -48,7 +48,7 @@
     angular.module('rateApp.rate-dashboard')
         .controller('RateDashboardController', RateDashboardController);
 
-    RateDashboardController.$inject = ['$scope', '$q', 'PeopleService', 'ReviewService', 'DataService', 'RateAssetsProvider'];
+    RateDashboardController.$inject = ['$scope', '$q', 'PeopleService', 'ReviewService', 'DataService', 'RateAssets'];
 
     function RateDashboardController($scope, $q, PeopleService, ReviewService, DataService, RateAssetsProvider) {
         var vm = this;

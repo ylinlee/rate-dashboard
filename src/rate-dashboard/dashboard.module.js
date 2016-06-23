@@ -4,6 +4,6 @@
   angular
     .module('rateApp.rate-dashboard',[
       'xeditable',
-      'rate-services'
+      'rateApp.rate-services'
     ]);
 })();
