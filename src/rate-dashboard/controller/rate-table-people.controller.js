@@ -29,7 +29,7 @@
         nick: '',
         job: null,
         profileImg: null ,
-        background: ','
+        background: ''
       };
       vm.people.push(vm.inserted);
     }
